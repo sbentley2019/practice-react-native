@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, TextInput } from "react-native";
 import Message from "./components/Message";
 
 export default function App() {
@@ -8,7 +8,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Text style={styles.yellow}>{state}</Text>
-      <Message
+      {/* <Message
         style={{ width: 50, height: 50, backgroundColor: "powderblue" }}
         press={() => {
           setState("one");
@@ -28,6 +28,11 @@ export default function App() {
           setState("three");
         }}
         name={"three"}
+      /> */}
+      <TextInput
+        placeholder="Input Text!!"
+        onChangeText={text => setState(text)}
+        value={state}
       />
     </View>
   );
