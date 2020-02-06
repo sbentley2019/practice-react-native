@@ -3,13 +3,13 @@ import { StyleSheet, Text, View, ScrollView, FlatList } from "react-native";
 
 export default function App() {
   const [state, setState] = useState([
-    { name: "alpha", key: 1 },
-    { name: "bravo", key: 2 },
-    { name: "charlie", key: 3 },
-    { name: "delta", key: 4 },
-    { name: "echo", key: 5 },
-    { name: "foxtrot", key: 6 },
-    { name: "golden", key: 7 }
+    { name: "alpha", id: 1 },
+    { name: "bravo", id: 2 },
+    { name: "charlie", id: 3 },
+    { name: "delta", id: 4 },
+    { name: "echo", id: 5 },
+    { name: "foxtrot", id: 6 },
+    { name: "golden", id: 7 }
   ]);
 
   return (
@@ -22,6 +22,7 @@ export default function App() {
         ))}
       </ScrollView> */}
       <FlatList
+        keyExtractor={item => item.id}
         data={state}
         renderItem={({ item }) => (
           <Text style={styles.itemContainer}>{item.name}</Text>
